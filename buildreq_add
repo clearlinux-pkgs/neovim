@@ -1,0 +1,12 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+libtool-dev
+msgpack-c-dev
+unibilium-dev
+libuv-dev
+jemalloc-dev
+libvterm-dev
+libtermkey-dev
+lpeg
+libmpack-lua
+gperf
