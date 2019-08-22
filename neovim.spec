@@ -4,7 +4,7 @@
 #
 Name     : neovim
 Version  : 0.3.8
-Release  : 2
+Release  : 3
 URL      : https://github.com/neovim/neovim/archive/v0.3.8.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.3.8.tar.gz
 Summary  : Fork of Vim aiming to improve user experience, plugins, and GUIs
@@ -15,6 +15,7 @@ Requires: neovim-data = %{version}-%{release}
 Requires: neovim-license = %{version}-%{release}
 Requires: neovim-locales = %{version}-%{release}
 Requires: neovim-man = %{version}-%{release}
+Requires: usrbinvi
 BuildRequires : buildreq-cmake
 BuildRequires : gettext-dev
 BuildRequires : git
@@ -91,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564609210
+export SOURCE_DATE_EPOCH=1566504486
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -104,7 +105,7 @@ make VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1564609210
+export SOURCE_DATE_EPOCH=1566504486
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/neovim
 cp LICENSE %{buildroot}/usr/share/package-licenses/neovim/LICENSE
