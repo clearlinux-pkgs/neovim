@@ -10,3 +10,4 @@ libtermkey-dev
 lpeg
 libmpack-lua
 gperf
+luv-dev
