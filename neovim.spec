@@ -4,10 +4,10 @@
 #
 Name     : neovim
 Version  : 0.4.3
-Release  : 6
+Release  : 7
 URL      : https://github.com/neovim/neovim/archive/v0.4.3/neovim-0.4.3.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.4.3/neovim-0.4.3.tar.gz
-Summary  : Fork of Vim aiming to improve user experience, plugins, and GUIs
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 LGPL-2.1 Vim
 Requires: neovim-bin = %{version}-%{release}
@@ -37,6 +37,7 @@ BuildRequires : pkgconfig(luajit)
 BuildRequires : pkgconfig(termkey)
 BuildRequires : unibilium-dev
 BuildRequires : usrbinvi
+Patch1: fno-common.patch
 
 %description
 [![Neovim](https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-300x87.png)](https://neovim.io)
@@ -86,27 +87,27 @@ man components for the neovim package.
 %prep
 %setup -q -n neovim-0.4.3
 cd %{_builddir}/neovim-0.4.3
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579130832
+export SOURCE_DATE_EPOCH=1589908690
 mkdir -p clr-build
 pushd clr-build
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto -std=gnu++98"
 %cmake ..
 make  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1579130832
+export SOURCE_DATE_EPOCH=1589908690
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/neovim
 cp %{_builddir}/neovim-0.4.3/LICENSE %{buildroot}/usr/share/package-licenses/neovim/43c308bd57ee3f6da01713b779e97ad4b3a8a9cb
