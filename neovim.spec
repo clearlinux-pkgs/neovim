@@ -4,7 +4,7 @@
 #
 Name     : neovim
 Version  : 0.4.4
-Release  : 10
+Release  : 11
 URL      : https://github.com/neovim/neovim/archive/v0.4.4/neovim-0.4.4.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.4.4/neovim-0.4.4.tar.gz
 Summary  : No detailed summary available
