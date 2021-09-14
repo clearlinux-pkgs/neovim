@@ -11,3 +11,4 @@ lpeg
 libmpack-lua
 gperf
 luv-dev
+tree-sitter-dev
