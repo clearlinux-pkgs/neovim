@@ -1,2 +1,5 @@
 # This file contains the output files that need %exclude. Full path
 # names, one per line.
+/usr/share/nvim/runtime/ftplugin/meson.vim
+/usr/share/nvim/runtime/indent/meson.vim
+/usr/share/nvim/runtime/syntax/meson.vim

@@ -4,7 +4,7 @@
 #
 Name     : neovim
 Version  : 0.5.0
-Release  : 12
+Release  : 13
 URL      : https://github.com/neovim/neovim/archive/v0.5.0/neovim-0.5.0.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.5.0/neovim-0.5.0.tar.gz
 Summary  : No detailed summary available
@@ -93,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1631654467
+export SOURCE_DATE_EPOCH=1631657032
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -106,7 +106,7 @@ make
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1631654467
+export SOURCE_DATE_EPOCH=1631657032
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/neovim
 cp %{_builddir}/neovim-0.5.0/LICENSE %{buildroot}/usr/share/package-licenses/neovim/43c308bd57ee3f6da01713b779e97ad4b3a8a9cb
@@ -115,6 +115,10 @@ pushd clr-build
 %make_install
 popd
 %find_lang nvim
+## Remove excluded files
+rm -f %{buildroot}/usr/share/nvim/runtime/ftplugin/meson.vim
+rm -f %{buildroot}/usr/share/nvim/runtime/indent/meson.vim
+rm -f %{buildroot}/usr/share/nvim/runtime/syntax/meson.vim
 
 %files
 %defattr(-,root,root,-)
@@ -560,7 +564,6 @@ popd
 /usr/share/nvim/runtime/ftplugin/markdown.vim
 /usr/share/nvim/runtime/ftplugin/masm.vim
 /usr/share/nvim/runtime/ftplugin/matlab.vim
-/usr/share/nvim/runtime/ftplugin/meson.vim
 /usr/share/nvim/runtime/ftplugin/mf.vim
 /usr/share/nvim/runtime/ftplugin/mma.vim
 /usr/share/nvim/runtime/ftplugin/modconf.vim
@@ -744,7 +747,6 @@ popd
 /usr/share/nvim/runtime/indent/mail.vim
 /usr/share/nvim/runtime/indent/make.vim
 /usr/share/nvim/runtime/indent/matlab.vim
-/usr/share/nvim/runtime/indent/meson.vim
 /usr/share/nvim/runtime/indent/mf.vim
 /usr/share/nvim/runtime/indent/mma.vim
 /usr/share/nvim/runtime/indent/mp.vim
@@ -1309,7 +1311,6 @@ popd
 /usr/share/nvim/runtime/syntax/matlab.vim
 /usr/share/nvim/runtime/syntax/maxima.vim
 /usr/share/nvim/runtime/syntax/mel.vim
-/usr/share/nvim/runtime/syntax/meson.vim
 /usr/share/nvim/runtime/syntax/messages.vim
 /usr/share/nvim/runtime/syntax/mf.vim
 /usr/share/nvim/runtime/syntax/mgl.vim
