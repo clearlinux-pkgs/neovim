@@ -4,7 +4,7 @@
 #
 Name     : neovim
 Version  : 0.5.1
-Release  : 14
+Release  : 15
 URL      : https://github.com/neovim/neovim/archive/v0.5.1/neovim-0.5.1.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.5.1/neovim-0.5.1.tar.gz
 Summary  : No detailed summary available
@@ -38,6 +38,7 @@ BuildRequires : pkgconfig(termkey)
 BuildRequires : tree-sitter-dev
 BuildRequires : unibilium-dev
 BuildRequires : usrbinvi
+Patch1: 0001-fix-provider-compare-versions-as-number-not-string-1.patch
 
 %description
 [![Neovim](https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-300x87.png)](https://neovim.io)
@@ -87,13 +88,14 @@ man components for the neovim package.
 %prep
 %setup -q -n neovim-0.5.1
 cd %{_builddir}/neovim-0.5.1
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1632754026
+export SOURCE_DATE_EPOCH=1637347041
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -106,7 +108,7 @@ make
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1632754026
+export SOURCE_DATE_EPOCH=1637347041
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/neovim
 cp %{_builddir}/neovim-0.5.1/LICENSE %{buildroot}/usr/share/package-licenses/neovim/43c308bd57ee3f6da01713b779e97ad4b3a8a9cb
@@ -116,9 +118,9 @@ pushd clr-build
 popd
 %find_lang nvim
 ## Remove excluded files
-rm -f %{buildroot}/usr/share/nvim/runtime/ftplugin/meson.vim
-rm -f %{buildroot}/usr/share/nvim/runtime/indent/meson.vim
-rm -f %{buildroot}/usr/share/nvim/runtime/syntax/meson.vim
+rm -f %{buildroot}*/usr/share/nvim/runtime/ftplugin/meson.vim
+rm -f %{buildroot}*/usr/share/nvim/runtime/indent/meson.vim
+rm -f %{buildroot}*/usr/share/nvim/runtime/syntax/meson.vim
 
 %files
 %defattr(-,root,root,-)
