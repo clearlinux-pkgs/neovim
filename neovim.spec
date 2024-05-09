@@ -4,7 +4,7 @@
 #
 Name     : neovim
 Version  : 0.8.3
-Release  : 23
+Release  : 24
 URL      : https://github.com/neovim/neovim/archive/v0.8.3/neovim-0.8.3.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.8.3/neovim-0.8.3.tar.gz
 Summary  : No detailed summary available
