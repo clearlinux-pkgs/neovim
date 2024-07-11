@@ -1,14 +1,15 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-libtool-dev
-msgpack-c-dev
-unibilium-dev
-libuv-dev
-jemalloc-dev
-libvterm-dev
-libtermkey-dev
-lpeg
-libmpack-lua
+LuaJIT
+LuaJIT-dev
 gperf
+jemalloc-dev
+libtermkey-dev
+libtool-dev
+libuv-dev
+libvterm-dev
+lpeg
 luv-dev
+msgpack-c-dev
 tree-sitter-dev
+unibilium-dev
