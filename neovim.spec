@@ -7,7 +7,7 @@
 #
 Name     : neovim
 Version  : 0.10.0
-Release  : 25
+Release  : 26
 URL      : https://github.com/neovim/neovim/archive/v0.10.0/neovim-0.10.0.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.10.0/neovim-0.10.0.tar.gz
 Summary  : No detailed summary available
@@ -49,6 +49,7 @@ Summary: bin components for the neovim package.
 Group: Binaries
 Requires: neovim-data = %{version}-%{release}
 Requires: neovim-license = %{version}-%{release}
+Requires: lpeg
 
 %description bin
 bin components for the neovim package.
@@ -95,7 +96,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1720721934
+export SOURCE_DATE_EPOCH=1721056888
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -126,7 +127,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1720721934
+export SOURCE_DATE_EPOCH=1721056888
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/neovim
 cp %{_builddir}/neovim-%{version}/src/mpack/LICENSE-MIT %{buildroot}/usr/share/package-licenses/neovim/d74b19fe43f401d150ff9388fadea9d7f424884e || :
