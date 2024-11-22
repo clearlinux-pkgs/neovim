@@ -7,7 +7,7 @@
 #
 Name     : neovim
 Version  : 0.10.2
-Release  : 29
+Release  : 30
 URL      : https://github.com/neovim/neovim/archive/v0.10.2/neovim-0.10.2.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.10.2/neovim-0.10.2.tar.gz
 Summary  : No detailed summary available
