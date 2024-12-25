@@ -6,10 +6,10 @@
 # autospec commit: 5424026
 #
 Name     : neovim
-Version  : 0.10.2
-Release  : 31
-URL      : https://github.com/neovim/neovim/archive/v0.10.2/neovim-0.10.2.tar.gz
-Source0  : https://github.com/neovim/neovim/archive/v0.10.2/neovim-0.10.2.tar.gz
+Version  : 0.10.3
+Release  : 32
+URL      : https://github.com/neovim/neovim/archive/v0.10.3/neovim-0.10.3.tar.gz
+Source0  : https://github.com/neovim/neovim/archive/v0.10.3/neovim-0.10.3.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 LGPL-2.1 MIT Vim
@@ -88,15 +88,15 @@ man components for the neovim package.
 
 
 %prep
-%setup -q -n neovim-0.10.2
-cd %{_builddir}/neovim-0.10.2
+%setup -q -n neovim-0.10.3
+cd %{_builddir}/neovim-0.10.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1732301060
+export SOURCE_DATE_EPOCH=1735089059
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -127,7 +127,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1732301060
+export SOURCE_DATE_EPOCH=1735089059
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/neovim
 cp %{_builddir}/neovim-%{version}/src/mpack/LICENSE-MIT %{buildroot}/usr/share/package-licenses/neovim/d74b19fe43f401d150ff9388fadea9d7f424884e || :
