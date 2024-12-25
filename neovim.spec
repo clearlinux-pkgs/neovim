@@ -7,7 +7,7 @@
 #
 Name     : neovim
 Version  : 0.10.3
-Release  : 32
+Release  : 33
 URL      : https://github.com/neovim/neovim/archive/v0.10.3/neovim-0.10.3.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.10.3/neovim-0.10.3.tar.gz
 Summary  : No detailed summary available
