@@ -7,7 +7,7 @@
 #
 Name     : neovim
 Version  : 0.11.1
-Release  : 41
+Release  : 42
 URL      : https://github.com/neovim/neovim/archive/v0.11.1/neovim-0.11.1.tar.gz
 Source0  : https://github.com/neovim/neovim/archive/v0.11.1/neovim-0.11.1.tar.gz
 Summary  : No detailed summary available
