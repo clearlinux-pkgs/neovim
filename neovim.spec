@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : neovim
-Version  : 0.11.2
-Release  : 46
-URL      : https://github.com/neovim/neovim/archive/v0.11.2/neovim-0.11.2.tar.gz
-Source0  : https://github.com/neovim/neovim/archive/v0.11.2/neovim-0.11.2.tar.gz
+Version  : 0.11.3
+Release  : 47
+URL      : https://github.com/neovim/neovim/archive/v0.11.3/neovim-0.11.3.tar.gz
+Source0  : https://github.com/neovim/neovim/archive/v0.11.3/neovim-0.11.3.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 LGPL-2.1 MIT Vim
@@ -79,15 +79,15 @@ man components for the neovim package.
 
 
 %prep
-%setup -q -n neovim-0.11.2
-cd %{_builddir}/neovim-0.11.2
+%setup -q -n neovim-0.11.3
+cd %{_builddir}/neovim-0.11.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1748614260
+export SOURCE_DATE_EPOCH=1752519897
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -118,7 +118,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1748614260
+export SOURCE_DATE_EPOCH=1752519897
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/neovim
 cp %{_builddir}/neovim-%{version}/src/mpack/LICENSE-MIT %{buildroot}/usr/share/package-licenses/neovim/d74b19fe43f401d150ff9388fadea9d7f424884e || :
@@ -373,7 +373,6 @@ rm -f %{buildroot}*/usr/share/nvim/runtime/syntax/meson.vim
 /usr/share/nvim/runtime/doc/api.txt
 /usr/share/nvim/runtime/doc/arabic.txt
 /usr/share/nvim/runtime/doc/autocmd.txt
-/usr/share/nvim/runtime/doc/builtin.txt
 /usr/share/nvim/runtime/doc/change.txt
 /usr/share/nvim/runtime/doc/channel.txt
 /usr/share/nvim/runtime/doc/cmdline.txt
@@ -391,7 +390,6 @@ rm -f %{buildroot}*/usr/share/nvim/runtime/syntax/meson.vim
 /usr/share/nvim/runtime/doc/digraph.txt
 /usr/share/nvim/runtime/doc/editing.txt
 /usr/share/nvim/runtime/doc/editorconfig.txt
-/usr/share/nvim/runtime/doc/eval.txt
 /usr/share/nvim/runtime/doc/faq.txt
 /usr/share/nvim/runtime/doc/filetype.txt
 /usr/share/nvim/runtime/doc/fold.txt
@@ -501,6 +499,8 @@ rm -f %{buildroot}*/usr/share/nvim/runtime/syntax/meson.vim
 /usr/share/nvim/runtime/doc/vi_diff.txt
 /usr/share/nvim/runtime/doc/vietnamese.txt
 /usr/share/nvim/runtime/doc/vim_diff.txt
+/usr/share/nvim/runtime/doc/vimeval.txt
+/usr/share/nvim/runtime/doc/vimfn.txt
 /usr/share/nvim/runtime/doc/visual.txt
 /usr/share/nvim/runtime/doc/vvars.txt
 /usr/share/nvim/runtime/doc/windows.txt
@@ -2160,6 +2160,8 @@ rm -f %{buildroot}*/usr/share/nvim/runtime/syntax/meson.vim
 /usr/share/nvim/runtime/syntax/zsh.vim
 /usr/share/nvim/runtime/tutor/en/vim-01-beginner.tutor
 /usr/share/nvim/runtime/tutor/en/vim-01-beginner.tutor.json
+/usr/share/nvim/runtime/tutor/en/vim-02-beginner.tutor
+/usr/share/nvim/runtime/tutor/en/vim-02-beginner.tutor.json
 /usr/share/nvim/runtime/tutor/ja/vim-01-beginner.tutor
 /usr/share/nvim/runtime/tutor/ja/vim-01-beginner.tutor.json
 /usr/share/nvim/runtime/tutor/tutor.tutor
